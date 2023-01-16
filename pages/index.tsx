@@ -1,5 +1,5 @@
 import { Star, System } from "@navikt/ds-icons";
-import { Checkbox, CheckboxGroup, Button, Heading, Link } from "@navikt/ds-react";
+import { Checkbox, CheckboxGroup, GuidePanel, Button, Heading, Link, ContentContainer, Grid, Cell } from "@navikt/ds-react";
 import { Dropdown, Header } from "@navikt/ds-react-internal";
 import type { NextPage } from "next";
 import Head from "next/head";
@@ -44,8 +44,25 @@ const Home: NextPage = () => {
           <Heading spacing level="2" size="large">
             Velkommen til NAV ❤️
           </Heading>
-          <p>Hei og velkommen som nyansatt i NAV. Kjekt å ha deg med på laget!</p>
+          <GuidePanel>
+            Hei og velkommen som nyansatt i NAV. Så kjekt å ha <em>deg</em> med på laget!
+            Dette er en teknisk demonstrasjonsside for hvor enkelt det er å komme i gang
+            med utvikling i NAV med hjelp av vå plattform og verktøykasse 🚀
+          </GuidePanel>
         </div>
+          <ContentContainer>
+              <Grid>
+                  <Cell xs={12} sm={7} lg={4}>
+                      <p>Noe innhold</p>
+                  </Cell>
+                  <Cell xs={12} sm={7} lg={4}>
+                      <p>Noe innhold</p>
+                  </Cell>
+                  <Cell xs={12} sm={7} lg={4}>
+                      <p>Noe innhold</p>
+                  </Cell>
+              </Grid>
+          </ContentContainer>
         <div>
           <Heading spacing level="2" size="medium">
             Kom i gang
@@ -56,28 +73,6 @@ const Home: NextPage = () => {
             <Checkbox value="Fremst">Aktivere MyApps</Checkbox>
             <Checkbox value="Fremst">Konto på GitHub</Checkbox>
           </CheckboxGroup>
-        </div>
-        <div>
-          <Heading spacing level="2" size="medium">
-            Button med ikon
-          </Heading>
-          <Button icon={<Star aria-hidden />}>Klikk meg!</Button>
-        </div>
-        <div>
-          <Heading spacing level="2" size="medium">
-            Bruk av Nextjs-lenker
-          </Heading>
-          <NextLink passHref href="/#">
-            <Link>Lenke til en side</Link>
-          </NextLink>
-        </div>
-        <div>
-          <Heading spacing level="2" size="medium">
-            OverridableComponent
-          </Heading>
-          <NextLink passHref href="/">
-            <Button as="a">{`Knapp med "a"-tag`}</Button>
-          </NextLink>
         </div>
       </main>
     </div>
