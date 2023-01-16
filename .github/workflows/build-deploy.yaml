@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: 18
       - run: yarn install
+      - run: yarn build
       - run: yarn export
       - uses: navikt/frontend/actions/spa-deploy/v1@main
         with:
