@@ -21,11 +21,12 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn export
-      - uses: navikt/frontend/actions/spa-deploy/v1@main
+      - uses: navikt/frontend/actions/spa-deploy/v2@main
         with:
-          app-name: velkommen-til-nav
-          team-name: frontendplattform
+          app: velkommen-til-nav
+          team: frontendplattform
           source: ./out
           ingress: https://velkommen-til-nav.labs.nais.io
           environment: labs
-          nais-deploy-apikey: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }}
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }}
