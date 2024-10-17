@@ -28,4 +28,5 @@ jobs:
           source: ./out
           ingress: https://velkommen-til-nav.labs.nais.io
           environment: labs
-          nais-deploy-apikey: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          identity_provider: ${{ secrets.NAIS_WORKLOAD_IDENTITY_PROVIDER }} # Provided as Organization Secret
+          project_id: ${{ vars.NAIS_MANAGEMENT_PROJECT_ID }} # Provided as Organization Variable
