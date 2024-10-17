@@ -21,7 +21,7 @@ jobs:
       - run: yarn install
       - run: yarn build
       - run: yarn export
-      - uses: navikt/frontend/actions/spa-deploy/v1@main
+      - uses: navikt/frontend/actions/spa-deploy/v2@main
         with:
           app: velkommen-til-nav
           team: frontendplattform
